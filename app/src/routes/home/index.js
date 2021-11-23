@@ -9,7 +9,8 @@ const router  = express.Router();
 const ctrl = require("./home.ctrl");
 
 
-router.get("/", ctrl.home);
-router.get("/login",ctrl.login);
+router.get("/", ctrl.output.home); //output은 암묵적인 약속이 아님, view, show 등 다른것으로 바꿔써도 상관없음
+router.get("/login",ctrl.output.login);
+router.post("/login", ctrl.process.login)
 
 module.exports = router;

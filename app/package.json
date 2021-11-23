@@ -6,12 +6,12 @@
     "login-lecture": "bin/www.js"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1"
   },
-  "devDependencies": {},
   "scripts": {
-    "start" : "pm2 start ./bin/www.js --watch --no-daemon",
+    "start": "pm2 start ./bin/www.js --watch --no-daemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
