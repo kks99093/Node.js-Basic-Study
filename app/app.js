@@ -1,6 +1,17 @@
 "use strict"
 const express = require("express");
+const dotenv = require("dotenv"); // 환경변수 관리 모듈
+dotenv.config();
+// 이메서드를 실행하면 .env에 등록되어있는 변수를 nodeJs에서 접근할수 있도록 process.env.환경변수로 등록시켜준다.
+// .env에 있는 파일은 ;(세미콜론)안찍음 [ㅠㅠ 이거때매 10분간 헤맸다 ㅠㅠ]
+// 사용하는 이유 팀단위로 개발할시 경우에따라 윈도우 MAC 리눅스등 개발환경이 다 다르다
+// 각 운영체제마다 환경변수를 등록해주는 방법이 다 다르기때문에 NodeProject에서 제안한 방법이 있는데
+// 이 모듈을 사용하면 어떤 OS에서 사용하더라도 동일하게 환경변수를 등록하고 가져올수 있게 된다.
+// 환경변수 저장할 파일은 .env로 정해져있다
+// (dotenv.config({path : 경로}))이런식으로 경로와 파일을 지정해줄수도 있는데 일반적으로 사용되는 이름을 사용하는것이
+// 커뮤니케이션 비용을 절감할수 있다.
 const app = express();
+
 
 //앱 세팅
 app.set("views", "./src/views"); //view파일을 넣어놓을 경로를 지정
